@@ -2,7 +2,13 @@ import React from "react";
 import { Work_Sans, Spline_Sans_Mono } from "next/font/google";
 import clsx from "clsx";
 
-import { LIGHT_TOKENS, DARK_TOKENS, BLOG_TITLE, COLOR_THEME_COOKIE_NAME } from "@/constants";
+import {
+  LIGHT_TOKENS,
+  DARK_TOKENS,
+  BLOG_TITLE,
+  BLOG_DESCRIPTION,
+  COLOR_THEME_COOKIE_NAME,
+} from "@/constants";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -25,7 +31,7 @@ const monoFont = Spline_Sans_Mono({
 
 export const metadata = {
   title: BLOG_TITLE,
-  description: "test",
+  description: BLOG_DESCRIPTION,
 };
 
 async function RootLayout({ children }) {
