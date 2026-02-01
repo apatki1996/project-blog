@@ -1,7 +1,7 @@
 ---
-title: 'Understanding the JavaScript Modulo Operator'
+title: "Understanding the JavaScript Modulo Operator"
 abstract: One of the most commonly-misunderstood operators is Modulo (%). In this tutorial, we'll unpack exactly what this little bugger does, and learn how it can help us solve practical problems.
-publishedOn: '2023-09-06T12:00:00-0400'
+publishedOn: "2023-09-06T12:00:00-0400"
 ---
 
 When I was first learning to code, I remember finding the Modulo operator (%) _extremely_ confusing. 😬
@@ -46,7 +46,11 @@ This works if we're dividing up pizzas or cakes… **but what if the items are i
 
 In that case, we'd be able to fit 2 items into each group, and we'd be left with 3 additional items:
 
-<DivisionGroupsDemo includeRemainderArea={true} numOfItems={11} initialNumOfGroups={4} />
+<DivisionGroupsDemo
+  includeRemainderArea={true}
+  numOfItems={11}
+  initialNumOfGroups={4}
+/>
 
 **This is known as the _remainder_.** It's what the modulo operator produces.
 
@@ -70,16 +74,14 @@ Specifically, there's one sort of problem that I seem to run into a lot, where t
 
 For example, suppose we have an array of 3 colors. Each second, we want to switch to the next color in the list. When we reach the end of the list, we want to jump back to the first item:
 
-**TODO: Uncomment CircularColorsDemo**
-
-{/* <CircularColorsDemo /> */}
+<CircularColorsDemo />
 
 This is a surprisingly tricky problem. Suppose we have a variable called `timeElapsed` that starts at 0 and increments by 1 every second; we have to somehow map this ever-increasing value to an array with only 3 items.
 
 Essentially, we need to write a function that produces the following results:
 
 ```js
-const COLORS = ['red', 'yellow', 'blue'];
+const COLORS = ["red", "yellow", "blue"];
 
 getColor({ timeElapsed: 0 }); // 'red'
 getColor({ timeElapsed: 1 }); // 'yellow'
@@ -96,7 +98,7 @@ getColor({ timeElapsed: 8 }); // 'blue'
 Let's look at how the modulo operator can help us solve this problem:
 
 ```js
-const COLORS = ['red', 'yellow', 'blue'];
+const COLORS = ["red", "yellow", "blue"];
 
 function getColor({ timeElapsed }) {
   const colorIndex = timeElapsed % COLORS.length;
