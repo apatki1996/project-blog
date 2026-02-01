@@ -35,7 +35,7 @@ export const metadata = {
 };
 
 async function RootLayout({ children }) {
-  const savedTheme = await cookies().get(COLOR_THEME_COOKIE_NAME);
+  const savedTheme = (await cookies()).get(COLOR_THEME_COOKIE_NAME);
   const theme = savedTheme?.value || "light";
 
   return (

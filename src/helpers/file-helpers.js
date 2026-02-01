@@ -26,7 +26,7 @@ export const loadBlogPost = React.cache(async function loadBlogPost(slug) {
   let rawContent;
 
   try {
-    await readFile(`/content/${slug}.mdx`);
+    rawContent = await readFile(`/content/${slug}.mdx`);
   } catch (err) {
     return null;
   }
